@@ -6,6 +6,13 @@ def get_input():
         return f.readlines()
 
 
+def solve1_non_optimized():
+    calories = get_input()
+    return max([sum([int(y) for y in x.split("\n") if y!=""]) for x in "".join(calories).split("\n\n")])
+
+def solve2_non_optimized():
+    calories = get_input()
+    return sum(sorted([sum([int(y) for y in x.split("\n") if y!=""]) for x in "".join(calories).split("\n\n")])[-3:])
 
 
 def solve2():
@@ -49,4 +56,6 @@ def solve1():
 
 if __name__ == "__main__":
     solve1()
+    print("One line code: ", solve1_non_optimized())
     solve2()
+    print("One line code: ", solve2_non_optimized())
